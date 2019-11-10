@@ -2,6 +2,8 @@ import React from "react";
 import { Map, TileLayer, Marker } from "react-leaflet";
 import Castles from './Castles';
 import ConstructionAreas from './ConstructionAreas';
+import { Grid } from 'semantic-ui-react'
+
 
 export default class MyMap extends React.Component {
  constructor(props) {
@@ -16,15 +18,15 @@ export default class MyMap extends React.Component {
  render() {
    const position = [this.state.lat, this.state.lng];
    return (
-     <Map center={position} zoom={this.state.zoom}>
+       <div className='container'>
+       <Map center={position} zoom={this.state.zoom} padding='300px'>
        <TileLayer
          attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
        />
-       <Marker position={[this.state.lat, this.state.lng]} />
-        <Castles />
         <ConstructionAreas/>
      </Map>
+       </div>
    );
  }
 }
