@@ -3,6 +3,9 @@ import { Map, TileLayer, Marker } from "react-leaflet";
 import Castles from './Castles';
 import ConstructionAreas from './ConstructionAreas';
 import { Grid } from 'semantic-ui-react'
+import ConstructionAreasRoadClosure from "./ConstructionAreasRoadClosure";
+import ConstructionAreasUpcoming from "./ConstructionAreasUpcoming";
+import Traffic from "./Traffic";
 
 
 export default class Construction extends React.Component {
@@ -28,6 +31,9 @@ export default class Construction extends React.Component {
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     <ConstructionAreas/>
+                    <ConstructionAreasRoadClosure/>
+                    <ConstructionAreasUpcoming/>
+                    <Traffic/>
                 </Map>
             </div>
         );

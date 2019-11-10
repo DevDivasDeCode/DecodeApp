@@ -4,6 +4,7 @@ import Castles from './Castles';
 import ConstructionAreas from './ConstructionAreas';
 import ConstructionAreasUpcoming from "./ConstructionAreasUpcoming.js";
 import ConstructionAreasRoadClosure from "./ConstructionAreasRoadClosure.js"
+import Traffic from "./Traffic"
 import { Grid } from 'semantic-ui-react'
 
 
@@ -27,6 +28,9 @@ export default class MyMap extends React.Component {
          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
        />
         <ConstructionAreas/>
+        <ConstructionAreasRoadClosure/>
+        <ConstructionAreasUpcoming/>
+        <Traffic/>
      </Map>
        </div>
    );
