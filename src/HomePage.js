@@ -5,6 +5,7 @@ import vancouverPic from './vanCar.jpg'
 
 
 
+
 class HomePage extends Component {
 
 
@@ -18,8 +19,24 @@ class HomePage extends Component {
             // backgroundImage: "url(" + "src/images/VancouverView.jpg" + ")",
         };
 
+        const textStyle = {
+
+        }
+
         return (
-            <div id="bg" style={sectionStyle}>
+            <div className='container' id="bg" style={sectionStyle}>
+                <div className="text-block">
+                    <br/>
+                    <h1>Here you will see the illustration of different ways to monitor traffic over a period of time.
+                        <br/>
+                        Let's explore by clicking the navigation bar
+                        {/*<br/>*/}
+                        {/*<li>Interactive Vehicle Density Map</li>*/}
+                        {/*<li>Overlap of Construction and Traffic Map</li>*/}
+                        {/*<li>Collision Data Map </li>*/}
+                        {/*<li>Hastings Travel Time Monitoring System</li>*/}
+                    </h1>
+                </div>
             {/*<div className="ui message">*/}
             {/*    <div className="header">*/}
             {/*        Here you will see the illustration of different ways to monitor traffic over a period of time.*/}

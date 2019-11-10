@@ -2,6 +2,8 @@ import React from "react";
 import { Map, TileLayer, Marker } from "react-leaflet";
 import Castles from './Castles';
 import ConstructionAreas from './ConstructionAreas';
+import ConstructionAreasUpcoming from "./ConstructionAreasUpcoming.js";
+import ConstructionAreasRoadClosure from "./ConstructionAreasRoadClosure.js"
 import { Grid } from 'semantic-ui-react'
 
 

@@ -12,7 +12,10 @@ export default class ConstructionAreas extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://opendata.vancouver.ca/api/records/1.0/search/?dataset=road-ahead-projects-under-construction&facet=comp_date')
+        fetch('https://opendata.vancouver.ca/api/records/1.0/search/?dataset=road-ahead-projects-under-construction&q=comp_date+%3C+2020&rows=50')
+        // fetch('https://opendata.vancouver.ca/api/records/1.0/search/?dataset=road-ahead-current-road-closures&rows=50&facet=comp_date')
+        // fetch('https://opendata.vancouver.ca/api/records/1.0/search/?dataset=road-ahead-upcoming-projects&rows=150&facet=comp_date')
+        // fetch('https://opendata.vancouver.ca/api/records/1.0/search/?dataset=road-ahead-projects-under-construction&facet=comp_date') // shows 10 rows of data
             .then(res => res.json())
             .then((data) => {
                 this.setState({ geojson: data })
@@ -32,10 +35,12 @@ export default class ConstructionAreas extends React.Component {
         console.log("onClick", e);
     }
 
+
+
     render() {
         let features = [];
         if (this.state.geojson) {
-            console.log(this.state.geojson);
+            // console.log(this.state.geojson);
             for (let i = 0; i < this.state.geojson.records.length; i ++) {
                 let feature = {
                     "type": "Feature",
@@ -43,7 +48,7 @@ export default class ConstructionAreas extends React.Component {
                     "properties": {
                         "name": this.state.geojson.records[i].fields.project,
                     },
-                    "color": "read"
+                    "color": "purple"
                 };
                 features.push(feature);
             }
@@ -56,8 +61,8 @@ export default class ConstructionAreas extends React.Component {
             <GeoJSON
                 data={featuresObj}
                 color="purple"
-                onMouseOver={this.onMouseOver.bind(this)}
-                onMouseOut={this.onMouseOut.bind(this)}
+                // onMouseOver={this.onMouseOver.bind(this)}
+                // onMouseOut={this.onMouseOut.bind(this)}
                 onClick={this.onClick.bind(this)}
             />
             : null;

@@ -17,7 +17,7 @@ export default class Construction extends React.Component {
 
     render() {
         const widthStyle = {
-            padding: '50px'
+            padding: '120px'
         };
         const position = [this.state.lat, this.state.lng];
         return (
